@@ -43,7 +43,7 @@ async function listZones() {
                             popup.style.boxShadow = "0px 0px 10px rgba(0,0,0,0.1)";
                             popup.style.fontFamily = "Arial, sans-serif";
                             
-                            popup.innerHTML = `Play more games at <a href="https://gn-math.github.io" target="_blank" style="color:#004085; font-weight:bold;">https://gn-math.github.io</a>!`;
+                            popup.innerHTML = `Play more games at <a href="https://B+ Math.github.io" target="_blank" style="color:#004085; font-weight:bold;">https://B+ Math.github.io</a>!`;
                             
                             const closeBtn = document.createElement("button");
                             closeBtn.innerText = "✖";
@@ -415,9 +415,9 @@ function loadPrivacy() {
         <div style="max-height: 60vh; overflow-y: auto;">
             <h2>PRIVACY POLICY</h2>
             <p>Last updated April 17, 2025</p>
-            <p>This Privacy Notice for gn-math ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:</p>
+            <p>This Privacy Notice for B+ Math ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:</p>
             <ul>
-                <li>Visit our website at <a href="https://gn-math.github.io">https://gn-math.github.io</a>, or any website of ours that links to this Privacy Notice</li>
+                <li>Visit our website at <a href="https://B+ Math.github.io">https://B+ Math.github.io</a>, or any website of ours that links to this Privacy Notice</li>
                 <li>Engage with us in other related ways, including any sales, marketing, or events</li>
             </ul>
             <p>Questions or concerns? Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="https://discord.gg/NAFw4ykZ7n">https://discord.gg/NAFw4ykZ7n</a>.</p>

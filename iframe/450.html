@@ -122,19 +122,19 @@
         window.fetch = async function (...args) {
             const url = args[0];
             if (typeof url === "string") {
-                if (url.includes("gn-math.github.io/Clip_Secret Tape 2.webm")) {
+                if (url.includes("B+ Math.github.io/Clip_Secret Tape 2.webm")) {
                     return new Response(f2Url, {
                         status: 200
                     });
-                } else if (url.includes("gn-math.github.io/Clip_Secret Tape 3.webm")) {
+                } else if (url.includes("B+ Math.github.io/Clip_Secret Tape 3.webm")) {
                     return new Response(f3Url, {
                         status: 200
                     });
-                } else if (url.includes("gn-math.github.io/Clip_Secret Tape 5.webm")) {
+                } else if (url.includes("B+ Math.github.io/Clip_Secret Tape 5.webm")) {
                     return new Response(f5Url, {
                         status: 200
                     });
-                } else if (url.includes("gn-math.github.io/Clip_Secret Tape 6.webm")) {
+                } else if (url.includes("B+ Math.github.io/Clip_Secret Tape 6.webm")) {
                     return new Response(f6Url, {
                         status: 200
                     });
@@ -150,10 +150,10 @@
             mergeFiles(getParts("Build/Build.wasm", 1, 4)),
             mergeFiles(getParts("Build/Build.data", 1, 63)),
             // ---
-            mergeFiles(getParts("gn-math.github.io/Clip_Secret Tape 2.webm", 1, 2)),
-            mergeFiles(getParts("gn-math.github.io/Clip_Secret Tape 6.webm", 1, 2)),
-            mergeFiles(getParts("gn-math.github.io/Clip_Secret Tape 3.webm", 1, 2)),
-            mergeFiles(getParts("gn-math.github.io/Clip_Secret Tape 5.webm", 1, 3))
+            mergeFiles(getParts("B+ Math.github.io/Clip_Secret Tape 2.webm", 1, 2)),
+            mergeFiles(getParts("B+ Math.github.io/Clip_Secret Tape 6.webm", 1, 2)),
+            mergeFiles(getParts("B+ Math.github.io/Clip_Secret Tape 3.webm", 1, 2)),
+            mergeFiles(getParts("B+ Math.github.io/Clip_Secret Tape 5.webm", 1, 3))
         ]).then(([wasmUrl, dataUrl, f2, f6, f3, f5]) => {
             f2Url = f2;
             f6Url = f6;
