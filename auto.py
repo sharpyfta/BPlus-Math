@@ -13,23 +13,23 @@ TEMPLATE_HTML = """<!DOCTYPE html>
     <link rel="apple-touch-icon" href="/images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play {GAME_NAME} | GN-Math Unblocked Games</title>
-    <meta name="description" content="Play {GAME_NAME} unblocked on GN-Math - No downloads required! Enjoy this fun HTML5 game at school or work with our fast, secure gaming platform.">
+    <title>Play {GAME_NAME} | B+-Math Unblocked Games</title>
+    <meta name="description" content="Play {GAME_NAME} unblocked on B+-Math - No downloads required! Enjoy this fun HTML5 game at school or work with our fast, secure gaming platform.">
     <meta name="keywords" content="{GAME_NAME}, {GAME_NAME} unblocked, play {GAME_NAME}, free {GAME_NAME}, html5 games, unblocked games, school games, no flash games">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://genizymath.github.io/">
-    <meta property="og:title" content="Play {GAME_NAME} | GN-Math Unblocked Games">
-    <meta property="og:description" content="Play {GAME_NAME} unblocked on GN-Math - No downloads required! Enjoy this fun HTML5 game at school or work.">
+    <meta property="og:url" content="https://sharpyfta.github.io/BPlus-Math//">
+    <meta property="og:title" content="Play {GAME_NAME} | B+-Math Unblocked Games">
+    <meta property="og:description" content="Play {GAME_NAME} unblocked on B+-Math - No downloads required! Enjoy this fun HTML5 game at school or work.">
     <meta property="og:image" content="{GAME_COVER}">
 	<meta name="google-adsense-account" content="ca-pub-5521219086088837">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://genizymath.github.io/">
-    <meta property="twitter:title" content="Play {GAME_NAME} | GN-Math Unblocked Games">
-    <meta property="twitter:description" content="Play {GAME_NAME} unblocked on GN-Math - No downloads required! Enjoy this fun HTML5 game at school or work.">
+    <meta property="twitter:url" content="https://sharpyfta.github.io/BPlus-Math//">
+    <meta property="twitter:title" content="Play {GAME_NAME} | B+-Math Unblocked Games">
+    <meta property="twitter:description" content="Play {GAME_NAME} unblocked on B+-Math - No downloads required! Enjoy this fun HTML5 game at school or work.">
     <meta property="twitter:image" content="{GAME_COVER}">
     
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WX5VS54ZDW"></script>
@@ -49,7 +49,7 @@ TEMPLATE_HTML = """<!DOCTYPE html>
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            text-align: center;
+            text-aliB+: center;
         }
         
         .game-header {
@@ -108,7 +108,7 @@ TEMPLATE_HTML = """<!DOCTYPE html>
         
         .game-info {
             margin-top: 20px;
-            text-align: left;
+            text-aliB+: left;
             padding: 20px;
             background: var(--card-bg);
             border-radius: 8px;
@@ -125,7 +125,7 @@ TEMPLATE_HTML = """<!DOCTYPE html>
             border-radius: 8px;
             box-shadow: 0 4px 8px var(--shadow);
             object-fit: contain;
-            align-self: flex-start;
+            aliB+-self: flex-start;
         }
         
         .game-details {
@@ -163,7 +163,7 @@ TEMPLATE_HTML = """<!DOCTYPE html>
     </style>
 </head>
 <body class="dark-mode">
-    <div id="ad-top" style="text-align: center; margin: 1rem 0;">
+    <div id="ad-top" style="text-aliB+: center; margin: 1rem 0;">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5521219086088837"
      crossorigin="anonymous"></script>
     </div>
@@ -184,10 +184,10 @@ TEMPLATE_HTML = """<!DOCTYPE html>
         <div class="game-frame-container">
             <iframe class="game-frame" id="gameFrame" allowfullscreen></iframe>
             <button class="fullscreen-btn" onclick="document.getElementById('gameFrame').requestFullscreen()">Fullscreen</button>
-            <button class="newtab-btn" onclick="window.open('https://genizymath.github.io/iframe/{PATHNAME}', '_blank')">Open in New Tab</button>
+            <button class="newtab-btn" onclick="window.open('https://sharpyfta.github.io/BPlus-Math//iframe/{PATHNAME}', '_blank')">Open in New Tab</button>
         </div>
 
-        <div id="ad-middle" style="text-align: center; margin: 2rem 0;">
+        <div id="ad-middle" style="text-aliB+: center; margin: 2rem 0;">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5521219086088837"
      crossorigin="anonymous"></script>
         
@@ -197,7 +197,7 @@ TEMPLATE_HTML = """<!DOCTYPE html>
             <div class="game-details">
                 <h2>About {GAME_NAME}</h2>
                 <p class="game-description">
-                    Play {GAME_NAME} unblocked on GN-Math! Our platform provides fast, secure access to this popular HTML5 game without any downloads. 
+                    Play {GAME_NAME} unblocked on B+-Math! Our platform provides fast, secure access to this popular HTML5 game without any downloads. 
                     Perfect for school, work, or home, {GAME_NAME} runs directly in your browser with no installation required.
                 </p>
                 
@@ -256,7 +256,7 @@ TEMPLATE_HTML = """<!DOCTYPE html>
         </div>
     </footer>
 
-        <div id="ad-bottom" style="text-align: center; margin: 2rem 0;">
+        <div id="ad-bottom" style="text-aliB+: center; margin: 2rem 0;">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5521219086088837"
      crossorigin="anonymous"></script>
         </div>
@@ -271,7 +271,7 @@ sitemap = """<?xml version="1.0" encoding="UTF-8"?>
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://genizymath.github.io/</loc>
+    <loc>https://sharpyfta.github.io/BPlus-Math//</loc>
   </url>
 """;
 
@@ -318,7 +318,7 @@ async def process_game(session: ClientSession, game: dict, OUTPUT_DIR: str, GAME
     global sitemap
     sitemap += f"""
     <url>
-        <loc>https://genizymath.github.io/games/{game_name_url}/</loc>
+        <loc>https://sharpyfta.github.io/BPlus-Math//games/{game_name_url}/</loc>
     </url>
     """
     print(f"Made {index_path}")
@@ -329,7 +329,7 @@ async def main():
     GAME_DIR = 'iframe'
     
     async with ClientSession() as session:
-        hash_response = await fetch_json(session, "https://api.github.com/repos/gn-math/assets/commits")
+        hash_response = await fetch_json(session, "https://api.github.com/repos/B+-math/assets/commits")
         hash = hash_response[0]['sha']
         print(f"latest hash: {hash}")
         
