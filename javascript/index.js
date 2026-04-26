@@ -43,7 +43,7 @@ async function listZones() {
                             popup.style.boxShadow = "0px 0px 10px rgba(0,0,0,0.1)";
                             popup.style.fontFamily = "Arial, sans-serif";
                             
-                            popup.innerHTML = `Play more games at <a href="https://B+ Math.github.io" target="_blank" style="color:#004085; font-weight:bold;">https://B+ Math.github.io</a>!`;
+                            popup.innerHTML = `Play more games at <a href="https://bplus-math.github.io" target="_blank" style="color:#004085; font-weight:bold;">https://bplus-math.github.io</a>!`;
                             
                             const closeBtn = document.createElement("button");
                             closeBtn.innerText = "✖";
@@ -362,7 +362,7 @@ function cloakIcon(url) {
 }
 function cloakName(string) {
     if ((string+"").trim().length === 0) {
-        document.title = "genizymath";
+        document.title = "b+ math";
         return;
     }
     document.title = string;
@@ -451,32 +451,71 @@ function closePopup() {
 }
 listZones();
 
-const schoolList = ["deledao", "goguardian", "lightspeed", "linewize", "securly", ".edu/"];
+(function() {
+    'use strict';
 
-function isBlockedDomain(url) {
-    const domain = new URL(url, location.origin).hostname + "/";
-    return schoolList.some(school => domain.includes(school));
-}
+    // 1. Expanded and more precise blocklist
+    const blockPattern = /deledao|goguardian|lightspeed|linewize|securly|\.edu\//i;
 
-const originalFetch = window.fetch;
-window.fetch = function (url, options) {
-    if (isBlockedDomain(url)) {
-        console.warn(`lam`);
-        return Promise.reject(new Error("lam"));
-    }
-    return originalFetch.apply(this, arguments);
-};
+    const shouldBlock = (url) => {
+        try {
+            const target = new URL(url, location.origin).href;
+            return blockPattern.test(target);
+        } catch (e) {
+            return false;
+        }
+    };
 
-const originalOpen = XMLHttpRequest.prototype.open;
-XMLHttpRequest.prototype.open = function (method, url) {
-    if (isBlockedDomain(url)) {
-        console.warn(`lam`);
-        return;
-    }
-    return originalOpen.apply(this, arguments);
-};
+    const logBlock = (url) => console.warn(`[Shield] Blocked: ${url}`);
 
-HTMLCanvasElement.prototype.toDataURL = function (...args) {
-    return "";
-};
+    // 2. Wrap Fetch
+    const originalFetch = window.fetch;
+    window.fetch = function(resource, init) {
+        const url = resource instanceof Request ? resource.url : resource;
+        if (shouldBlock(url)) {
+            logBlock(url);
+            return Promise.reject(new TypeError("Network request blocked by shield"));
+        }
+        return originalFetch.apply(this, arguments);
+    };
 
+    // 3. Wrap XMLHttpRequest
+    const originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function(method, url) {
+        if (shouldBlock(url)) {
+            logBlock(url);
+            // We "neutralize" the object rather than just returning
+            this.send = () => {}; 
+            return;
+        }
+        return originalOpen.apply(this, arguments);
+    };
+
+    // 4. Wrap Beacon API (Common for background telemetry)
+    const originalBeacon = navigator.sendBeacon;
+    navigator.sendBeacon = function(url, data) {
+        if (shouldBlock(url)) {
+            logBlock(url);
+            return true; // Pretend it succeeded
+        }
+        return originalBeacon.apply(this, arguments);
+    };
+
+    // 5. Intelligent Canvas Protection
+    // Instead of returning "", we return a tiny valid transparent PNG
+    const transparentPixel = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+    
+    HTMLCanvasElement.prototype.toDataURL = function() {
+        return transparentPixel;
+    };
+
+    HTMLCanvasElement.prototype.getContext = (function(orig) {
+        return function(type, attributes) {
+            if (type === 'webgl' || type === 'webgl2') {
+                // Potential to block WebGL fingerprinting here if needed
+            }
+            return orig.apply(this, arguments);
+        };
+    })(HTMLCanvasElement.prototype.getContext);
+
+})();
